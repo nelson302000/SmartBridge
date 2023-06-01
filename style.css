@@ -1,0 +1,78 @@
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-logo {
+  margin-right: 90px;
+
+  height: 100px;
+}
+
+.navbar-link {
+  margin-right: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  font-family: "Arial", sans-serif; /* Cambiar por la fuente futurista deseada */
+  letter-spacing: 1px; /* Aumentar el espaciado entre letras */
+}
+
+.navbar-link:not(:last-child)::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 12px; /* Ajusta la altura deseada de la línea */
+  background-color: black;
+  opacity: 0.3; /* Ajusta la opacidad deseada de la línea */
+  margin-left: 10px; /* Ajusta el espaciado entre el texto y la línea */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.cover {
+  height: 600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.6);
+  background-blend-mode: darken;
+  color: white;
+  background-image: url(https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/fondo2.jpeg?v=1654622241208);
+}
+
+.responsive-iframe {
+  position: relative;
+  padding-top: 56.25%;
+}
+
+.responsive-iframe iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.quien{
+  height:600px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color:rgba(0,0,0,0.6);
+  background-blend-mode: darken;
+  color: white;
+  background-image: url(https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/tablsts.jpeg?v=1654667722452)
+ 
+  
+}

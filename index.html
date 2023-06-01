@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="https://glitch.com/favicon.ico" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.7.1/dist/ml5.min.js"></script>
+
+    <title>Cambiar Nombre</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  
+  </head>
+  <body>
+    <script src="app.js"></script>
+    <div>
+      <button id="videoAction" onclick="toggleVideo()">Desactivar Video</button>
+      <button id="detectionAction" onclick="toggleDetecting()">Camara Principal</button>
+  </div>
+  <div id="videoContainer"></div>
+  </div>
+    <div class="navbar">
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/Blanco.png?v=1678305156311"
+        alt="Logo"
+           id="superior"
+        class="navbar-logo"
+        onclick="reproducirAudio()"
+      />
+      <a href="#Redes" class="navbar-link">Redes Sociales</a>
+      <a href="#Entretenimiento" class="navbar-link">Entretenimiento</a>
+      <a href="#Noticias" class="navbar-link">Noticias</a>
+      <a href="#Trabajo" class="navbar-link">Trabajo</a>
+      <a href="#Infantil" class="navbar-link">Infantil</a>
+      <a href="#Guvernamental" class="navbar-link">Gubernamental</a>
+      <a href="#Salud" class="navbar-link">Salud</a>
+      <a href="#Colombia" class="navbar-link">Colombia</a>
+      <a href="#Global" class="navbar-link">En Tendencia</a>
+      <a href="#q" class="navbar-link">¿Quienes Somos?</a>
+    </div>
+
+    <div
+      class="cover d-flex justify-content-center align-items-center flex-column"
+    >
+      <br />
+      <h1>
+        <img
+          class="logo"
+          src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/282%20sin%20t%C3%ADtulo_20230308150255.png?v=1678305835792"
+          width="1300"
+        />
+      </h1>
+    </div>
+
+    <audio id="myAudio">
+      <source
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/bienvenida.mp3?v=1684424798636"
+        type="audio/mpeg"
+      />
+      Tu navegador no admite la reproducción de audio.
+    </audio>
+
+    <div align="center">
+      <h2 id="Redes"><br />Redes Sociales<br /></h2>
+      <br />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/b570592f-ac3e-453c-bbd5-24191af5b808.image.png?v=1679518855517"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/c3615b3d-7881-4dc1-9ee1-27b04c7ff9a0.image.png?v=1679526493423"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/95157277-fed4-4e05-961f-b1ffa0e16cdb.image.png?v=1679535668755"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/a508395e-23ad-472a-96c7-9a9c5a60b40b.image.png?v=1679535558832"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/6ab2cf3d-ea6a-4e7d-b757-074f2d756868.image.png?v=1679535646104"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/c354a3b3-484f-4e57-a88f-d526c8a699a7.image.png?v=1679535629324"
+        width="300"
+      />
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/1026cb6b-af15-47e2-8d79-f98c97f98c18.image.png?v=1679537118330"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/0775f2e5-44d0-4456-b724-b7324a9df4eb.image.png?v=1679537071547"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/bddd0a88-38f3-4ebc-ba5b-524e534c8ec8.image.png?v=1679537089660"
+        width="300"
+      />
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/b45dc4c6-eb8b-46d6-a4db-e60973b2ecde.image.png?v=1679535680069"
+        width="300"
+      />
+    </div>
+
+    <div align="center">
+      <h3 id="Entretenimiento"><br />Entretenimiento<br /><br /></h3>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/f5f15afb-cdf2-4b79-9bf9-7e95e46182a7.image.png?v=1679519067222"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/8ba4d38c-795c-4048-b197-6d5886963743.image.png?v=1679538481206"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/4871d2c7-b505-445c-9e18-65e25220aad1.image.png?v=1679539608071"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/2cd5eb37-74c1-490c-907f-d051e2d06d6c.image.png?v=1679539623592"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/83268264-486f-4471-a4f6-cc8282747dd6.image.png?v=1679539633926"
+        width="300"
+      />
+      
+      
+      
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524162430.png?v=1685490131767"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524164429.png?v=1685490129100"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524162843.png?v=1685490126714"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524163407.png?v=1685490124405"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524163850.png?v=1685490210937"
+        width="300"
+      />
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div align="center">
+      <h2 id="Noticias"><br />Noticias<br /></h2>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/289ed4c4-29f8-45ba-a882-1cdae338dfd2.image.png?v=1679521694106"
+        width="300"
+      />
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524173728.png?v=1685488647509"
+        width="300"
+      />
+      
+       <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524173507.png?v=1685488656760"
+        width="300"
+      />
+      
+       <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524174642.png?v=1685488666052"
+        width="300"
+      />
+      
+      
+       <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524174134.png?v=1685488673729"
+        width="300"
+      />
+     
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div align="center">
+      <h2 id="Trabajo"><br />Trabajo<br /></h2>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/a7b0fa70-1083-4b1f-9468-f48ba5d541bb.image.png?v=1679521963936"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524194910.png?v=1685488989305"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524194648.png?v=1685488991105"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524194317.png?v=1685488994235"
+        width="300"
+      />
+      
+      
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div align="center">
+      <h2 id="Tiendas"><br />Tiendas Online<br /></h2>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/82ea9f13-37bd-4bcf-9f3e-b38468c2a10f.image.png?v=1679526593474"
+        width="300"
+      />
+      
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524180626.png?v=1685489115124"
+        width="300"
+      />
+      
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524180305.png?v=1685489112310"
+        width="300"
+      />
+      
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524181141.png?v=1685489108765"
+        width="300"
+      />
+      
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524180050.png?v=1685489106327"
+        width="300"
+      />
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div align="center">
+      <h2 id="Educacion"><br />Educacion<br /></h2>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/03fa2003-7808-4f76-bc34-d769b2b2f4f2.image.png?v=1679526885039"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524184047.png?v=1685489574642"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524183441.png?v=1685489577253"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524182503.png?v=1685489580250"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524184513.png?v=1685489583772"
+        width="300"
+      />
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    <div align="center">
+      <h2 id="Infantil"><br />Infantil<br /></h2>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/898d1413-897a-4e6b-b6ea-67912c720d77.image.png?v=1679526582601"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524192606.png?v=1685489341931"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524193236.png?v=1685489339162"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524192738.png?v=1685489335775"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo2_20230524192932.png?v=1685489330776"
+        width="300"
+      />
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div align="center">
+      <h2 id="Guvernamental"><br />Gubernamental<br /></h2>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/eeb4a123-48cf-4447-8078-5124af5b2aaf.image.png?v=1679526545839"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo_20230524214248.png?v=1685489710563"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo_20230524214137.png?v=1685489712698"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo_20230524214025.png?v=1685489715668"
+        width="300"
+      />
+      
+      <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo_20230524214344.png?v=1685489718096"
+        width="300"
+      />
+    </div>
+    
+    
+    
+    
+    
+
+    <div align="center">
+      <h2 id="Salud"><br />Salud<br /></h2>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/f3b260d7-e893-41b1-b5f3-68ebe0d19837.image.png?v=1679526530150"
+        width="300"
+      />
+      
+       <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo_20230524215634.png?v=1685489876543"
+        width="300"
+      />
+      
+       <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo_20230524215754.png?v=1685489873956"
+        width="300"
+      />
+      
+       <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo_20230524215852.png?v=1685489870920"
+        width="300"
+      />
+      
+       <img
+        src="https://cdn.glitch.global/fcfe30c5-97d7-4b64-8739-93c0a8aaf77c/8%20sin%20t%C3%ADtulo_20230524215926.png?v=1685489866916"
+        width="300"
+      />
+    </div>
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div align="center">
+      <h2 id="Colombia"><br />Las mas visitadas en Colombia<br /></h2>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/489258db-0554-4c48-badf-79677d69efc8.image.png?v=1679526480756"
+        width="300"
+      />
+    </div>
+
+    <div align="center">
+      <h2 id="Global"><br />Las mas visitadas en el mundo<br /></h2>
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/c3615b3d-7881-4dc1-9ee1-27b04c7ff9a0.image.png?v=1679526493423"
+        width="300"
+      />
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/b570592f-ac3e-453c-bbd5-24191af5b808.image.png?v=1679518855517"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/a508395e-23ad-472a-96c7-9a9c5a60b40b.image.png?v=1679535558832"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/489258db-0554-4c48-badf-79677d69efc8.image.png?v=1679526480756"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/f5f15afb-cdf2-4b79-9bf9-7e95e46182a7.image.png?v=1679519067222"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/03fa2003-7808-4f76-bc34-d769b2b2f4f2.image.png?v=1679526885039"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/a7b0fa70-1083-4b1f-9468-f48ba5d541bb.image.png?v=1679521963936"
+        width="300"
+      />
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/8ba4d38c-795c-4048-b197-6d5886963743.image.png?v=1679538481206"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/4871d2c7-b505-445c-9e18-65e25220aad1.image.png?v=1679539608071"
+        width="300"
+      />
+
+      <img
+        src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/bddd0a88-38f3-4ebc-ba5b-524e534c8ec8.image.png?v=1679537089660"
+        width="300"
+      />
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+<section id="q" class="quien">
+      <div class="container mt-5 mb-5 text-center">
+        <br />
+        <img
+          src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/1654667938907.png?v=1654667979331"
+        />
+      </div>
+
+      <div class="container mt-5 mb-5">
+        <h4>
+          <br />
+          SmartBrige es una página web con un diseño inclusivo que facilita el
+          acceso a la información y servicios a todas las personas, incluyendo
+          aquellas que tienen discapacidades. Trabajamos día a día para ofrecer
+          una experiencia de navegación óptima para todas las personas. Contamos
+          con un compromiso social, nuestra meta es lograr una sociedad más
+          inclusiva donde todos tengan igualdad de oportunidades. Nos
+          enorgullece ser una de las soluciones para que todas las personas
+          puedan tener acceso a la información y servicios en línea sin
+          barreras. ¡Gracias por visitarnos!
+        </h4>
+        <br /><br />
+      </div>
+
+      <div class="container mt-5 mb-5 text-center">
+        <img />
+
+        <a href="#superior"
+          ><img
+            src="https://cdn.glitch.global/556f605a-41c1-44b6-a20d-ca1af8f5cd79/Negro.png?v=1678305137764"
+            height="104"
+        /></a>
+        <br /><br /><br />
+      </div>
+    </section>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+  </body>
+</html>
